@@ -10,9 +10,9 @@
     	die('Erreur : ' . $e->getMessage());
     }
 
-    $req = $bdd->prepare('SELECT id, password FROM membres WHERE pseudo = :pseudo');
+    $req = $bdd->prepare('SELECT id, password FROM members WHERE nickname = :pseudo');
     $req->execute(array(
-    	'pseudo' => $_POST['pseudo']
+    	'nickname' => $_POST['pseudo']
     ));
 
     $resultat = $req->fetch();

@@ -1,6 +1,7 @@
 <?php
 require_once ('model\PostManager.php');
 require_once ('model\CommentManager.php');
+require_once ('model\UserManager.php');
 
 function listPosts()
 {
@@ -35,4 +36,17 @@ function addComment($postId, $author, $comment)
 	{
 		header('Location: index.php?action=post&id=' . $postId);
 	}
+}
+
+function gologin()
+{
+	require('view\loginView.php');
+}
+
+function login($nickname, $password)
+{
+	$userManager = new UserManager();
+	$user = $userManager->authentification($nickname, $password);
+	//reste du code
+	require('view\listPostsView.php');
 }

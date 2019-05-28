@@ -1,7 +1,5 @@
 <?php $title = 'Le blog de l\'exilé'; ?>
 
-<?php include("old\header.php"); ?>
-
 <?php ob_start(); ?>
 <p>Derniers billets du blog :</p>
 <div class="news">
@@ -29,7 +27,5 @@
 </div>
 <?php $content = ob_get_clean(); ?>
 
-
 <?php require('view\template.php'); ?>
-
 <?php include("old\\footer.php"); ?>

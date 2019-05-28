@@ -39,6 +39,23 @@ try
                 throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }
+
+        elseif ($_GET['action'] == 'gologin')
+        {
+                gologin();
+        }
+
+        elseif ($_GET['action'] == 'login')
+        {
+            if(isset($_POST['nickname']) && isset($_POST['nickname']))
+            {
+                login($_POST['nickname'], $_POST['nickname']);
+            }
+            else
+            {
+                throw new Exception('Erreur : l\'identifiant ou le mot de passe ,n\'est pas renseigné');
+            }
+        }
     }
     else
     {
