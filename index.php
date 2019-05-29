@@ -47,9 +47,9 @@ try
 
         elseif ($_GET['action'] == 'login')
         {
-            if(isset($_POST['nickname']) && isset($_POST['nickname']))
+            if(isset($_POST['nickname']) && isset($_POST['password']))
             {
-                login($_POST['nickname'], $_POST['nickname']);
+                login($_POST['nickname'], $_POST['password']);
             }
             else
             {

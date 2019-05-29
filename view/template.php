@@ -7,14 +7,17 @@
     </head>
     <body>
     	<div class="header">
-			<h1>Le blog d'un exilé</h1>
-			<h2>Retracez l'aventure d'exilés sur Wraeclast</h2>
+    		<div id="title">
+				<h1>Le blog d'un exilé</h1>
+				<h2>Retracez l'aventure d'exilés sur Wraeclast</h2>
+			</div>
+			<div id="idMenu">
 			<?php
-				if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+				if (isset($_SESSION['id']) AND isset($_SESSION['nickname']))
 				{
-    				echo 'Bonjour ' . $_SESSION['pseudo'];
+    				echo 'Bonjour ' . $_SESSION['nickname'];
 			?>
-					<br/><a href="logout.php">Déconnection</a><br/>
+					<br/><a href="logout.php">Déconnection</a><br/> <!-- action à créer -->
 			<?php 
 				}
 				else
@@ -26,6 +29,11 @@
 				}
 			?>
 				<a href="index.php">Retour à l'index</a><br/>
+			</div>
+			<!-- ajouter menu admin si group_id == 1-->
+			<div id="admin">
+				<!-- ajouter options admin -->
+			</div>
 		</div>
 
     	<?= $content ?>

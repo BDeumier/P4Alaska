@@ -46,7 +46,6 @@ function gologin()
 function login($nickname, $password)
 {
 	$userManager = new UserManager();
-	$user = $userManager->authentification($nickname, $password);
-	//reste du code
-	require('view\listPostsView.php');
+	$userManager->authentification($nickname, $password);
+	listPosts();
 }

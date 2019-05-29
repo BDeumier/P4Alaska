@@ -21,7 +21,12 @@
 ?>
         <h3><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></h3>
         <p><?= htmlspecialchars($comment['comment']) ?></p>
-        <button>Report</button> <!-- ou autre, pour renvoyer vers l'action report -->
+        <div id="commentActions">
+            <button>Signaler</button> <!-- renvoyer vers l'action report -->
+            <!-- if SESSION group_id == 1 -->
+            <button>Modifier</button> <!-- renvoyer vers l'action edit comment -->
+            <button>Supprimer</button> <!-- renvoyer vers l'action delete commment -->
+        </div>
 <?php
     }
 ?>
