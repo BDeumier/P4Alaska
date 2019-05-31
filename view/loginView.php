@@ -4,7 +4,7 @@
 <p>Veuillez rentrer votre identifiant et votre mot de passe :</p>
 
 <!--formulaire pour se connecter -->
-<form action="index.php?action=login.php" method="post">
+<form action="index.php?action=login" method="post">
 	<label for="nickname">Votre pseudo : </label><input type="text" name="nickname" id="nickname"><br/>
 	<label for="password">Votre mot de passe : </label><input type="password" name="password" id="password"><br/>
 	<input type="submit" value="Se connecter">

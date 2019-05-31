@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,23 +20,34 @@
 				{
     				echo 'Bonjour ' . $_SESSION['nickname'];
 			?>
-					<br/><a href="logout.php">Déconnection</a><br/> <!-- action à créer -->
+					<br/><a href="index.php?action=logout">Déconnection</a><br/>
 			<?php 
 				}
 				else
 				{
 			?>
-					<a href="inscription.php">Inscrivez vous !</a><br/> <!-- action à créer -->
+					<a href="index.php?action=gosignin">Inscrivez vous !</a><br/>
 					<a href="index.php?action=gologin">Connectez vous</a><br/> 
 			<?php
 				}
 			?>
 				<a href="index.php">Retour à l'index</a><br/>
 			</div>
-			<!-- ajouter menu admin si group_id == 1-->
-			<div id="admin">
-				<!-- ajouter options admin -->
-			</div>
+
+			<?php
+				if ($_SESSION['group_id'] == 1)
+				{
+			?>
+					<div id="admin">
+						<!-- ajouter options admin -->
+						<!-- créer billet -->
+						<!-- créer compte admin -->
+						<!-- edit / delete billet SI billet (template à revoir) -->
+						<!-- edit / delete comment SI billet (template à revoir) -->
+					</div>
+			<?php
+				}
+			?>		
 		</div>
 
     	<?= $content ?>

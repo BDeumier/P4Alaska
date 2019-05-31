@@ -53,8 +53,30 @@ try
             }
             else
             {
-                throw new Exception('Erreur : l\'identifiant ou le mot de passe ,n\'est pas renseigné');
+                throw new Exception('Erreur : l\'identifiant ou le mot de passe ,n\'est pas renseigné'); // même si l'un des 2 n'est pas renseigné on n'a pas ce message d'erreur
             }
+        }
+
+        elseif ($_GET['action'] == 'gosignin')
+        {
+                gosignin();
+        }
+
+        elseif ($_GET['action'] == 'signin')
+        {
+            if(isset($_POST['nickname']) && isset($_POST['passwordA']) && isset($_POST['passwordB'])&& isset($_POST['email']))
+            {
+                signin($_POST['nickname'], $_POST['passwordA'], $_POST['email']);
+            }
+            else
+            {
+                throw new Exception('Erreur : tous les champs ne sont pas renseignés'); // à tester
+            }
+        }
+
+        elseif ($_GET['action'] == 'logout')
+        {
+                logout();
         }
     }
     else

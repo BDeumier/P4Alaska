@@ -47,5 +47,23 @@ function login($nickname, $password)
 {
 	$userManager = new UserManager();
 	$userManager->authentification($nickname, $password);
+	listPosts(); //rediriger via le routeur
+}
+
+function gosignin()
+{
+	require('view\signinView.php');
+}
+
+function signin($nickname, $password, $email)
+{
+	$userManager = new UserManager();
+	$userManager->signin($nickname, $password, $email);
 	listPosts();
+}
+
+function logout()
+{
+	$userManager = new UserManager();
+	$userManager->logout();
 }
