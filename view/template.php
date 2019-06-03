@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,7 @@ session_start();
 				if (isset($_SESSION['id']) AND isset($_SESSION['nickname']))
 				{
     				echo 'Bonjour ' . $_SESSION['nickname'];
+
 			?>
 					<br/><a href="index.php?action=logout">Déconnection</a><br/>
 			<?php 
@@ -27,7 +28,7 @@ session_start();
 				{
 			?>
 					<a href="index.php?action=gosignin">Inscrivez vous !</a><br/>
-					<a href="index.php?action=gologin">Connectez vous</a><br/> 
+					<a href="index.php?action=gologin">Connectez vous</a><br/>
 			<?php
 				}
 			?>
@@ -35,15 +36,12 @@ session_start();
 			</div>
 
 			<?php
-				if ($_SESSION['group_id'] == 1)
+				if (isset($_SESSION['group_id']) AND $_SESSION['group_id'] == 1)
 				{
 			?>
 					<div id="admin">
-						<!-- ajouter options admin -->
-						<!-- créer billet -->
-						<!-- créer compte admin -->
-						<!-- edit / delete billet SI billet (template à revoir) -->
-						<!-- edit / delete comment SI billet (template à revoir) -->
+						<a href="index.php?action=gowrite">Ecrire un billet</a><br/>
+						<a href="index.php?action=gopromote">Promouvoir un compte en admin</a><br/>
 					</div>
 			<?php
 				}

@@ -1,4 +1,7 @@
-<?php $title = 'Le blog de l\'exilé'; ?>
+
+<?php $title = 'Le blog de l\'exilé';
+session_start();
+?>
 
 <?php ob_start(); ?>
 <div class="news">
@@ -23,9 +26,17 @@
         <p><?= htmlspecialchars($comment['comment']) ?></p>
         <div id="commentActions">
             <button>Signaler</button> <!-- renvoyer vers l'action report -->
-            <!-- if SESSION group_id == 1 -->
-            <button>Modifier</button> <!-- renvoyer vers l'action edit comment -->
-            <button>Supprimer</button> <!-- renvoyer vers l'action delete commment -->
+            <?php
+                if ($_SESSION['group_id'] == 1)
+                {
+            ?>
+                    <div id="admin">
+                        <a href="index.php?action=goeditComment&amp;id=<?= $comment['id'] ?>">Modérer</a><br/>
+                        <a href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>">Supprimer</a><br/>
+                    </div>
+            <?php
+                }
+            ?>
         </div>
 <?php
     }

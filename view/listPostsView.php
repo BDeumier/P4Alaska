@@ -1,4 +1,6 @@
-<?php $title = 'Le blog de l\'exilé'; ?>
+<?php $title = 'Le blog de l\'exilé';
+session_start();
+?>
 
 <?php ob_start(); ?>
 <p>Derniers billets du blog :</p>

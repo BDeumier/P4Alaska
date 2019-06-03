@@ -2,6 +2,7 @@
 require_once ('model\PostManager.php');
 require_once ('model\CommentManager.php');
 require_once ('model\UserManager.php');
+require_once ('model\AdminManager.php');
 
 function listPosts()
 {
@@ -46,7 +47,7 @@ function gologin()
 function login($nickname, $password)
 {
 	$userManager = new UserManager();
-	$userManager->authentification($nickname, $password);
+	$userManager->login($nickname, $password);
 	listPosts(); //rediriger via le routeur
 }
 
@@ -66,4 +67,51 @@ function logout()
 {
 	$userManager = new UserManager();
 	$userManager->logout();
+	listPosts();
+}
+
+function gopromote()
+{
+	require('view\promoteView.php');
+}
+
+
+function promote($nickname)
+{
+	$adminManager = new AdminManager();
+	$adminManager->promote($nickname);
+	listPosts();
+}
+
+function gowrite()
+{
+	require('view\writeView.php');
+}
+
+function write($postTitle, $post)
+{
+	$adminManager = new AdminManager();
+	$adminManager->write($postTitle, $post);
+	listPosts();
+}
+
+function goeditComment ($commentId)
+{
+	//chercher commentaire
+	require('view\moderateView.php');
+	header('view\moderateView.php&id=' . $commentId);
+}
+
+function editComment($commentId, $newText)
+{
+	$adminManager = new AdminManager();
+	$adminManager->editComment($commentId, $newText);
+	listPosts(); //plutôt post avec le bon id
+}
+
+function deleteComment($commentId)
+{
+	$adminManager = new AdminManager();
+	$adminManager->deleteComment($commentId);
+	listPosts(); //plutôt post avec le bon id
 }

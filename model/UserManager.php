@@ -3,8 +3,9 @@ require_once('model\Manager.php');
 
 class UserManager extends Manager
 {
-	public function authentification($nickname, $password)
+	public function login($nickname, $password)
 	{
+		session_start(); // envoie un avertissement mais on ne se connecte pas sans cette ligne
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT id, nickname, password, group_id FROM members WHERE nickname = ?');
 		$req->execute(array($nickname));
@@ -41,12 +42,13 @@ class UserManager extends Manager
 		'password' => $password_hashed,
 		'email' => $email));
 
-		authentification($nickname, $password); //on renvoie true si ça marche et on redirige via l'index?
+		login($nickname, $password); //on renvoie true si ça marche et on redirige via l'index?
 	}
 
 	public function logout()
 	{
 		//vérifier si la session contient bien quelque chose
-		//session_destroy();
+		session_start();
+		session_destroy();
 	}
 }

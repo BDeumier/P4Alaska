@@ -78,6 +78,87 @@ try
         {
                 logout();
         }
+
+        elseif ($_GET['action'] == 'gopromote')
+        {
+                gopromote();
+        }
+
+        elseif ($_GET['action'] == 'promote')
+        {
+            //check si on a le même pseudo 2 fois
+                promote($_POST['nickname']);
+        }
+
+        elseif ($_GET['action'] == 'gowrite')
+        {
+            gowrite();
+        }
+
+        elseif ($_GET['action'] == 'write')
+        {
+            if(isset($_POST['postTitle']) && isset($_POST['post']))
+            {
+                write($_POST['postTitle'], $_POST['post']);
+            }
+            
+            else
+            {
+                throw new Exception('Erreur : le titre ou le contenu n\'est pas renseigné');
+            }
+        }
+
+        elseif ($_GET['action'] == 'goeditComment')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                goeditComment($_GET['id']);
+            }
+            
+            else
+            {
+                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'editComment')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                if (isset($_POST['newText']))
+                {
+                    editComment($_GET['id'], $_POST['newText']);
+                }
+
+                else
+                {
+                    throw new Exception('Erreur : le texte est vide');
+                }
+            }
+
+            else
+            {
+                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+            }
+        }
+
+        /*elseif ($_GET['action'] == 'godeleteComment')
+        {
+            //confirmation dans une view? ou on peut s'en passer? confirmation via message javascript ?
+        }*/
+
+        elseif ($_GET['action'] == 'deleteComment')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                deleteComment($_GET['id']);
+            }
+
+            else
+            {
+                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+            }
+        }
     }
     else
     {
