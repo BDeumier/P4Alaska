@@ -1,5 +1,6 @@
 <?php
 require('controller/controller.php');
+session_start();
 
 try
 {

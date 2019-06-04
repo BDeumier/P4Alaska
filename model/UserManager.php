@@ -5,7 +5,7 @@ class UserManager extends Manager
 {
 	public function login($nickname, $password)
 	{
-		session_start(); // envoie un avertissement mais on ne se connecte pas sans cette ligne
+		//session_start(); // envoie un avertissement mais on ne se connecte pas sans cette ligne
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT id, nickname, password, group_id FROM members WHERE nickname = ?');
 		$req->execute(array($nickname));

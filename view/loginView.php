@@ -1,5 +1,5 @@
 <?php $title = 'Le blog de l\'exilé';
-session_start();
+//session_start();
 ?>
 
 <?php ob_start(); ?>

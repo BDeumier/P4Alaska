@@ -1,6 +1,6 @@
 
 <?php $title = 'Le blog de l\'exilé';
-session_start();
+//session_start();
 ?>
 
 <?php ob_start(); ?>
@@ -20,7 +20,7 @@ session_start();
 
 <?php
     while ($comment = $comments->fetch())
-    {
+    { //ajouter condition if ($comment['reported'] == 1) on change l'apparence
 ?>
         <h3><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></h3>
         <p><?= htmlspecialchars($comment['comment']) ?></p>
