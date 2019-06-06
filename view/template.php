@@ -1,14 +1,10 @@
-<?php
-//session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=lr7rf2f10wdo01kg40v6kby2469ko230x7va9h18mrflbuxm"></script>
         <script>tinymce.init({
-    			selector: 'textarea#post',
-    			inline: true
+    			selector: '#postTextarea',
   				});
 		</script>
         <title><?= $title?></title>

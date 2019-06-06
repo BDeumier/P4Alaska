@@ -10,26 +10,40 @@ class AdminManager extends Manager
 		$req->execute(array($nickname));
 	}
 
-	public function write($postTitle, $post)
+	public function write($title, $content)
 	{
 		$db = $this->dbConnect();
 		$post = $db->prepare('INSERT INTO posts(title, content, post_date) VALUES (?, ?, NOW())');
-		$post->execute(array($postTitle, $post)); // ne fonctionne pas, renvoie : Object of class PDOStatement could not be converted to string
+		$post->execute(array($title, $content));
 
 		//return affected line pour les vérifs
 	}
 
-	public function deleteComment($commentId)
+	public function deletePost($id)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('DELETE FROM posts WHERE id = ?');
+		$req->execute(array($id));
+	}
+
+	public function editPost($id, $newText)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE posts SET content = ? WHERE id = ?');
+		$comment->execute(array($newText, $id));
+	}
+
+	public function deleteComment($id)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('DELETE FROM comments WHERE id = ?');
-		$req->execute(array($commentId));
+		$req->execute(array($id));
 	}
 
-	public function editComment($commentId, $newText)
+	public function editComment($id, $newText)
 	{
 		$db = $this->dbConnect();
-		$comment = $db->prepare('UPDATE comments SET comment = ? WHERE id = ?');
-		$comment->execute(array($newText, $commentId));
+		$comment = $db->prepare('UPDATE comments SET comment = ?, reported = 0 WHERE id = ?');
+		$comment->execute(array($newText, $id));
 	}
 }

@@ -48,7 +48,7 @@ function login($nickname, $password)
 {
 	$userManager = new UserManager();
 	$userManager->login($nickname, $password);
-	listPosts(); //rediriger via le routeur
+	header('Location: index.php?action=listPosts');
 }
 
 function gosignin()
@@ -67,7 +67,7 @@ function logout()
 {
 	$userManager = new UserManager();
 	$userManager->logout();
-	listPosts();
+	header('Location: index.php?action=listPosts');
 }
 
 function gopromote()
@@ -107,6 +107,7 @@ function editComment($commentId, $newText)
 	$adminManager = new AdminManager();
 	$adminManager->editComment($commentId, $newText);
 	listPosts(); //plutôt post avec le bon id
+	//header post avec id en url
 }
 
 function deleteComment($commentId)
@@ -114,4 +115,23 @@ function deleteComment($commentId)
 	$adminManager = new AdminManager();
 	$adminManager->deleteComment($commentId);
 	listPosts(); //plutôt post avec le bon id
+}
+
+function reportComment($commentId)
+{
+	$commentManager = new CommentManager();
+	$commentManager->reportComment($commentId);
+	listPosts(); //plutôt post avec le bon id
+}
+
+function deletePost($postId)
+{
+	$adminManager = new AdminManager();
+	$adminManager->deletePost($postId);
+	listPosts();
+}
+
+function goeditPost($postId)
+{
+	header('Location: view\editPostView.php&id=' . $postId);
 }

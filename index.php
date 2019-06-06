@@ -1,6 +1,6 @@
 <?php
-require('controller/controller.php');
 session_start();
+require('controller/controller.php');
 
 try
 {
@@ -26,9 +26,9 @@ try
         {
             if(isset($_GET['id']) && $_GET['id'] > 0)
             {
-                if (!empty($_POST['author']) && !empty($_POST['comment']))
+                if (isset($_SESSION['nickname']) && !empty($_POST['comment']))
                 {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                    addComment($_GET['id'], $_SESSION['nickname'], $_POST['comment']);
                 }
                 else
                 {
@@ -87,8 +87,23 @@ try
 
         elseif ($_GET['action'] == 'promote')
         {
-            //check si on a le même pseudo 2 fois
-                promote($_POST['nickname']);
+            if(isset($_POST['nickname']))
+            {
+                if ($_POST['nickname'] == $_POST['nickname2'])
+                {
+                    promote($_POST['nickname']);                  
+                }
+
+                else
+                {
+                    throw new Exception("Les 2 champs ne sont pas identiques.");                 
+                }
+            }
+            else
+            {
+                throw new Exception("Veuillez renseigner un pseudonyme.");
+                
+            }
         }
 
         elseif ($_GET['action'] == 'gowrite')
@@ -143,11 +158,6 @@ try
             }
         }
 
-        /*elseif ($_GET['action'] == 'godeleteComment')
-        {
-            //confirmation dans une view? ou on peut s'en passer? confirmation via message javascript ?
-        }*/
-
         elseif ($_GET['action'] == 'deleteComment')
         {
             if(isset($_GET['id']) && $_GET['id'] > 0)
@@ -158,6 +168,32 @@ try
             else
             {
                 throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'reportComment')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                reportComment($_GET['id']);
+            }
+
+            else
+            {
+                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'deletePost')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                deletePost($_GET['id']);
+            }
+
+            else
+            {
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }
     }

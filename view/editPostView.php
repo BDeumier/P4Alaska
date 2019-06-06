@@ -3,9 +3,9 @@
 ?>
 
 <?php ob_start(); ?>
-<h1>Nouveau billet</h1>
+<h1>Corriger un billet</h1>
 
-<!--formulaire pour écrire un billet -->
+<!--formulaire pour corriger un billet -->
 <form action="index.php?action=write" method="post">
 	<label for="postTitle">Titre du billet : </label><textarea name="postTitle" id="postTitle"></textarea><br/>
 	<label for="post">Billet : </label><textarea name="post" id="postTextarea"></textarea><br/>
