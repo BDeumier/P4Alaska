@@ -9,9 +9,10 @@
         while($data = $posts->fetch())
         {
     ?>
-            <h3><?= htmlspecialchars($data['title']); ?>, posté le <?= htmlspecialchars($data['post_date']); ?></h3>
+            <h3><?= htmlspecialchars($data['title']); ?></h3>
             <p>
                 <?= htmlspecialchars($data['content']); ?><br />
+                <strong>Posté le <?= htmlspecialchars($data['post_date']); ?></strong>
                 <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Commentaires</a>
             </p>
     <?php
@@ -30,4 +31,3 @@
 <?php $content = ob_get_clean(); ?>
 
 <?php require('view\template.php'); ?>
-<?php include("old\\footer.php"); ?>
