@@ -1,6 +1,4 @@
-<?php $title = 'Le blog de l\'exilé';
-//session_start();
-?>
+<?php $title = 'Billet simple pour l\'Alaska';?>
 
 <?php ob_start(); ?>
 <h1>Nouveau billet</h1>

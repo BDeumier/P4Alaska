@@ -1,32 +1,39 @@
-<?php $title = 'Le blog de l\'exilé';
-//session_start();
-?>
+<?php $title = 'Billet simple pour l\'Alaska';?>
 
 <?php ob_start(); ?>
-<p>Derniers billets du blog :</p>
-<div class="news">
-    <?php
-        while($data = $posts->fetch())
-        {
-    ?>
-            <h3><?= htmlspecialchars($data['title']); ?></h3>
-            <p>
-                <?= htmlspecialchars($data['content']); ?><br />
-                <strong>Posté le <?= htmlspecialchars($data['post_date']); ?></strong>
-                <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Commentaires</a>
-            </p>
-    <?php
+<div class="row justify-content-around" id="news">
+    <div class="col-lg-7">
+        <?php
+            while($data = $posts->fetch())
+            {
+        ?>
+                <div class="textbox">
+                    <h3><?= htmlspecialchars($data['title']); ?></h3>
+                    <p>
+                        <?= htmlspecialchars($data['content']); ?><br />
+                        <strong>Posté le <?= htmlspecialchars($data['post_date']); ?></strong>
+                        <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Commentaires</a>
+                    </p>
+                </div>
+        <?php
         }        
-
         $posts->closeCursor();
-    ?>
+        ?>
         <p>Pages : </p>
-    <?php
-        /*for ($i = 1; $i <= $nombre_pages; $i++)
+        <?php
+        /*$nombre_pages = $data
+        for ($i = 1; $i <= $nombre_pages; $i++)
         {
             var_dump($i);
         }*/
-    ?>
+        ?>
+    </div>
+    <div class="col-lg-2">
+        <div class="textbox">
+            <h3>A propos de l'auteur</h3>
+            <p>Jean Rochefort est un romancier français né en 1976 à Paris. Auteur de "Une nuit au paradis" ainsi que de "Bonjour mon vieil ami", il se lance dans le numérique avec une aventure en Alaska disponible en ligne.</p>
+        </div>
+    </div>
 </div>
 <?php $content = ob_get_clean(); ?>
 

@@ -3,7 +3,7 @@ body
     background-color: #EEEEEE;
 }
 
-header
+header, footer
 {
     padding: 10px;
     background-color: white;
@@ -34,28 +34,35 @@ strong
     color: rgb(5, 140, 149);
 }
 
-.news p
+#idMenu
+{
+    text-align: center;
+}
+
+#news p, #commentaires p
 {
     background-color: white;
     margin-top:0px;
+    padding: 0px 5px 0px 5px;  
 }
 
-.news
+.textbox
 {
-    width:70%;
-    margin:auto;
+    box-shadow: 4px 4px 4px rgb(100, 100, 100);
+    margin: 15px;
+
 }
+
+/*#news, #commentaires
+{
+    width:100%;
+    margin:auto;
+}*/
 
 a
 {
     text-decoration: none;
     color: rgb(5, 140, 149);
-}
-
-.commentaires
-{
-    width: 70%;
-    margin: auto;
 }
 
 .commentaires p
@@ -64,9 +71,9 @@ a
     margin-top:0px;
 }
 
-/* fond gris
+/*
 petit séparateur noir pour le footer
-articles sur fond blanc + petite ombre
-header sur fond blanc + logo + liens
-éventuellement ça ne prend pas toute la largeur avec une partie à droite sur l'auteur et les moyens de la contacter
+logo dans le header = lien index
+liens contacter auteur (images, fake liens)
+dans les commentaires le footer ne prend pas toute la largeur
 */

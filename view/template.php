@@ -13,15 +13,15 @@
         <link rel="stylesheet" href="public/css/style.css" />
     </head>
     <body>
-    	<div class="container">
-    		<header class="row">
-    			<div class="col-lg-9">
+    	<div class="container-fluid">
+    		<header class="row justify-content-around">
+    			<div class="col-lg-7">
     				<div id="title">
-						<h1>Le blog d'un exilé</h1>
-						<h2>Retracez l'aventure d'exilés sur Wraeclast</h2>
+						<h1>Billet simple pour l'Alaska</h1>
+						<h2>Un polar signé Jean Rochefort</h2>
 					</div>
     			</div>	
-    			<div class="col-lg-3">
+    			<div class="col-lg-2">
     				<div id="idMenu">
 						<?php
 						if (isset($_SESSION['id']) AND isset($_SESSION['nickname']))
@@ -39,31 +39,28 @@
 							<a href="index.php?action=gologin">Connectez vous</a><br/>
 						<?php
 						}
+						if (isset($_SESSION['group_id']) AND $_SESSION['group_id'] == 1)
+						{
 						?>
-						<a href="index.php">Retour à l'index</a><br/>
-					</div>
-
-					<?php
-					if (isset($_SESSION['group_id']) AND $_SESSION['group_id'] == 1)
-					{
-					?>
-						<div id="admin">
+						<div class="admin">
 							<a href="index.php?action=gowrite">Ecrire un billet</a><br/>
 							<a href="index.php?action=gopromote">Promouvoir un compte en admin</a><br/>
 						</div>
 					<?php
 					}
 					?>
+						<a href="index.php">Retour à l'index</a><br/>
+					</div>	
     			</div>	
 			</header>
 			<div class="row">
 				<div class="col-lg-12">
 					<?= $content ?>
-				</div>	
+				</div>
 			</div>
-			<div class="row">
+			<footer class="row">
 				<div class="col-lg-12">
-					<p>Le footer via boostrap.</p>
+					<p>Mentions légales</p>
 				</div>	
 			</div>
 		</div>

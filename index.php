@@ -67,7 +67,14 @@ try
         {
             if(isset($_POST['nickname']) && isset($_POST['passwordA']) && isset($_POST['passwordB'])&& isset($_POST['email']))
             {
-                signin($_POST['nickname'], $_POST['passwordA'], $_POST['email']);
+                if($_POST['passwordA'] == $_POST['passwordB'])
+                {
+                    signin($_POST['nickname'], $_POST['passwordA'], $_POST['email']);
+                }
+                else
+                {
+                    throw new Exception('Erreur : les 2 mots de passe ne sont pas identiques');
+                }
             }
             else
             {

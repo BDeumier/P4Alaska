@@ -1,17 +1,14 @@
 
-<?php $title = 'Le blog de l\'exilé';
+<?php $title = 'Billet simple pour l\'Alaska';
 //session_start();
 ?>
 
 <?php ob_start(); ?>
-<div class="news">
-    <h3>
-        <?= htmlspecialchars($post['title']) ?>
-        <em>le <?= $post['post_date'] ?></em>
-    </h3>
-            
+<div class="col-lg-12" id="news">
+    <h3><?= htmlspecialchars($post['title']) ?></h3>          
     <p>
-        <?= nl2br(htmlspecialchars($post['content'])) ?>
+        <?= nl2br(htmlspecialchars($post['content'])) ?><br/>
+        <strong>le <?= $post['post_date'] ?></strong>
     </p>
 </div>
 
@@ -27,15 +24,14 @@
     }
 ?>
 
-<h2>Commentaires</h2>
-<div class="commentaires">
-
-<?php
+<div class="col-lg-12" id="commentaires">
+    <h3>Commentaires</h3>
+    <?php
     while ($comment = $comments->fetch())
     {
-?>
+    ?>
         <div <?php if ($comment['reported'] == 1 && isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1) {?>class="reported"<?php }?>> <!-- à tester, correct? -->
-            <h3><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></h3>
+            <h4><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></h4>
             <p><?= htmlspecialchars($comment['comment']) ?></p>
             <div class="commentActions">
                 <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>">Signaler</a>

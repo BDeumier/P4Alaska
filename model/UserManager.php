@@ -27,13 +27,19 @@ class UserManager extends Manager
 
 	public function signin($nickname, $password, $email)
 	{
-		// on fait toutes les vérifications sur les données reçues
-		// on vérifie que le pseudo est libre
-		// on vérifie que les 2 passwords sont identiques
-		// on vérifie que l'adresse mail est valide (miam une REGEX)
+		
+		$db = $this->dbConnect();
+		$checkNickname = $db->prepare('SELECT id FROM members WHERE nickname = ?');
+		$checkNickname->execute(array($nickname));
+		$result = $checkNickname->fetch();
+
+		if ($result['id'] >= 1)
+		{
+			throw new Exception('Erreur : le nickname est déja pris.');
+			exit();
+		}
 
 		$password_hashed = password_hash($password, PASSWORD_DEFAULT);
-		$db = $this->dbConnect();
 		$req = $db->prepare('INSERT INTO members(nickname, password, email, signin_date, group_id)
 		VALUES (:nickname, :password, :email, CURDATE(), 0)');
 		$req->execute(array(
