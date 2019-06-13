@@ -1,3 +1,5 @@
+/* Page entière */
+
 body
 {
     background-color: #EEEEEE;
@@ -28,10 +30,36 @@ h3
     margin-bottom:0px;
 }
 
-strong
+.postContent
+{
+    max-height: 100px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.date
 {
     font-style: italic;
     color: rgb(5, 140, 149);
+}
+
+/* Header */
+
+#titleBlock
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logo
+{
+    max-height: 75px;
+    max-width: 75px;
+    overflow: hidden;
+    border-radius: 37px;
+    box-shadow: 4px 4px 4px rgb(100, 100, 100);
+    margin: 15px;
 }
 
 #idMenu
@@ -39,17 +67,26 @@ strong
     text-align: center;
 }
 
+/* Corps de la page */
+
 #news p, #commentaires p
 {
     background-color: white;
-    margin-top:0px;
+    margin:0px;
     padding: 0px 5px 0px 5px;  
+}
+
+#aside
+{
+    position: fixed;
+    margin: 50px;
 }
 
 .textbox
 {
     box-shadow: 4px 4px 4px rgb(100, 100, 100);
     margin: 15px;
+    border-radius: 5px;
 
 }
 
@@ -68,12 +105,5 @@ a
 .commentaires p
 {
     background-color: #EEEEEE;
-    margin-top:0px;
+    margin:0px;
 }
-
-/*
-petit séparateur noir pour le footer
-logo dans le header = lien index
-liens contacter auteur (images, fake liens)
-dans les commentaires le footer ne prend pas toute la largeur
-*/

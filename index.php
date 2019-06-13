@@ -203,6 +203,19 @@ try
                 throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }
+
+        elseif ($_GET['action'] == 'goeditPost')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                goeditPost($_GET['id']);
+            }
+
+            else
+            {
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
+            }
+        }
     }
     else
     {

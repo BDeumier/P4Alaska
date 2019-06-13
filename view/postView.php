@@ -5,9 +5,9 @@
 
 <?php ob_start(); ?>
 <div class="col-lg-12" id="news">
-    <h3><?= htmlspecialchars($post['title']) ?></h3>          
+    <h3><?= $post['title'] ?></h3>          
     <p>
-        <?= nl2br(htmlspecialchars($post['content'])) ?><br/>
+        <?= $post['content'] ?><br/>
         <strong>le <?= $post['post_date'] ?></strong>
     </p>
 </div>
@@ -30,7 +30,7 @@
     while ($comment = $comments->fetch())
     {
     ?>
-        <div <?php if ($comment['reported'] == 1 && isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1) {?>class="reported"<?php }?>> <!-- à tester, correct? -->
+        <div <?php if ($comment['reported'] == 1 && isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1) {?>class="reported"<?php }?>>
             <h4><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date'] ?></h4>
             <p><?= htmlspecialchars($comment['comment']) ?></p>
             <div class="commentActions">

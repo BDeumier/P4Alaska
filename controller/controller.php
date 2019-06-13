@@ -98,6 +98,8 @@ function write($postTitle, $post)
 function goeditComment ($commentId)
 {
 	//chercher commentaire
+	$commentManager = new CommentManager();
+	$comment = $commentManager->getComment($commentId);
 	require('view\moderateView.php');
 	header('view\moderateView.php&id=' . $commentId);
 }

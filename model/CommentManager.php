@@ -12,6 +12,16 @@ class CommentManager extends Manager
     	return $comments;
 	}
 
+    public function getComment($commentId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT comment FROM comments WHERE id = ?');
+        $req->execute(array($commentId));
+        $comment = $req->fetch();
+
+        return $comment;
+    }
+
 	public function postComment($postId, $author, $comment)
 	{
     	$db = $this->dbConnect();

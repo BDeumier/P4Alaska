@@ -16,9 +16,14 @@
     	<div class="container-fluid">
     		<header class="row justify-content-around">
     			<div class="col-lg-7">
-    				<div id="title">
-						<h1>Billet simple pour l'Alaska</h1>
-						<h2>Un polar signé Jean Rochefort</h2>
+    				<div id="titleBlock">
+    					<div id="logo">
+    						<a href="index.php"><img src="public/images/logotest1.png" alt="une vue sur un lac de l'Alaska" title="logo blog Alaska"/></a>
+    					</div>
+    					<div id="title">
+							<h1>Billet simple pour l'Alaska</h1>
+							<h2>Un polar signé Jean Rochefort</h2>
+						</div>
 					</div>
     			</div>	
     			<div class="col-lg-2">

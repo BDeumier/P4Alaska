@@ -8,12 +8,14 @@
             {
         ?>
                 <div class="textbox">
-                    <h3><?= htmlspecialchars($data['title']); ?></h3>
-                    <p>
-                        <?= htmlspecialchars($data['content']); ?><br />
-                        <strong>Posté le <?= htmlspecialchars($data['post_date']); ?></strong>
-                        <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Commentaires</a>
-                    </p>
+                    <h3><?= $data['title'] ?></h3>
+                    <div class ="postContent">
+                        <?= $data['content'] ?>
+                    </div>
+                    <div class="date">
+                        <p>Posté le <?= htmlspecialchars($data['post_date']); ?>
+                        <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Voir le billet</a></p>
+                    </div>
                 </div>
         <?php
         }        
@@ -29,7 +31,7 @@
         ?>
     </div>
     <div class="col-lg-2">
-        <div class="textbox">
+        <div class="textbox" id="aside">
             <h3>A propos de l'auteur</h3>
             <p>Jean Rochefort est un romancier français né en 1976 à Paris. Auteur de "Une nuit au paradis" ainsi que de "Bonjour mon vieil ami", il se lance dans le numérique avec une aventure en Alaska disponible en ligne.</p>
         </div>

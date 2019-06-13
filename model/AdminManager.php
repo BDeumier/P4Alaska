@@ -24,6 +24,8 @@ class AdminManager extends Manager
 		$db = $this->dbConnect();
 		$req = $db->prepare('DELETE FROM posts WHERE id = ?');
 		$req->execute(array($id));
+		$reqComment = $db->prepare('DELETE FROM comments WHERE post_id = ?');
+		$reqComment->execute(array($id));
 	}
 
 	public function editPost($id, $newText)
