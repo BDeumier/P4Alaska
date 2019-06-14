@@ -37,4 +37,14 @@ class CommentManager extends Manager
         $req = $db->prepare('UPDATE comments SET reported = 1 WHERE id = ?');
         $affectedLines = $req->execute(array($commentId));
     }
+
+    public function getPostId($commentId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT post_id FROM comments WHERE id = ?');
+        $req->execute(array($commentId));
+        $postId = $req->fetch();
+
+        return $postId;
+    }
 }

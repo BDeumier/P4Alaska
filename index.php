@@ -6,11 +6,7 @@ try
 {
     if (isset($_GET['action']))
     {
-        if ($_GET['action'] == 'listPosts')
-        {
-            listPosts();
-        }
-        elseif ($_GET['action'] == 'post')
+        if ($_GET['action'] == 'post')
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
@@ -214,6 +210,41 @@ try
             else
             {
                 throw new Exception('Erreur : aucun identifiant de billet envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'editPost')
+        {
+            if(isset($_POST['newTitle']) && isset($_POST['newText']))
+            {
+                if(isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    editPost($_GET['id'], $_POST['newTitle'], $_POST['newText']);
+                }
+
+                else
+                {
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                }
+            }
+
+            else
+            {
+                throw new Exception("Le titre ou le texte n'est pas renseigné");
+                
+            }
+        }
+
+        elseif ($_GET['action'] == 'listPosts')
+        {
+            if(isset($_GET['page']) && $_GET['page'] > 0)
+            {
+                listPosts($_GET['page']);
+            }
+
+            else
+            {
+                throw new Exception("La page demandée n'existe pas");       
             }
         }
     }

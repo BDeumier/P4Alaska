@@ -4,30 +4,37 @@
 <div class="row justify-content-around" id="news">
     <div class="col-lg-7">
         <?php
-            while($data = $posts->fetch())
+        $postNumber = 0;
+        while ($data = $posts->fetch())
+        {
+            $postNumber++;
+            if ($postNumber > ($pageToDisplay*5) - 5 && $postNumber < ($pageToDisplay*5) + 1)
             {
         ?>
-                <div class="textbox">
-                    <h3><?= $data['title'] ?></h3>
-                    <div class ="postContent">
-                        <?= $data['content'] ?>
-                    </div>
-                    <div class="date">
-                        <p>Posté le <?= htmlspecialchars($data['post_date']); ?>
-                        <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Voir le billet</a></p>
-                    </div>
+            <div class="textbox">
+                <h3><?= $data['title'] ?></h3>
+                <div class ="postContent">
+                    <?= $data['content'] ?>
                 </div>
+                <div class="date">
+                    <p>Posté le <?= htmlspecialchars($data['post_date']); ?>
+                    <a href="index.php?action=post&id=<?= htmlspecialchars($data['id']); ?>">Voir le billet</a></p>
+                </div>
+            </div>
         <?php
+            }
         }        
         $posts->closeCursor();
         ?>
         <p>Pages : </p>
         <?php
-        /*$nombre_pages = $data
-        for ($i = 1; $i <= $nombre_pages; $i++)
+        $pageNumber = round($postNumber / 5) + 1;
+        for ($i = 1; $i <= $pageNumber; $i++)
         {
-            var_dump($i);
-        }*/
+        ?>
+            <a href="index.php?action=listPosts&amp;page=<?= $i ?>"><?= $i?></a>
+        <?php
+        }
         ?>
     </div>
     <div class="col-lg-2">

@@ -4,10 +4,11 @@ require_once ('model\CommentManager.php');
 require_once ('model\UserManager.php');
 require_once ('model\AdminManager.php');
 
-function listPosts()
+function listPosts($page = 1)
 {
 	$postManager = new PostManager();
     $posts = $postManager->getPosts();
+    $pageToDisplay = $page;
 
     require('view\listPostsView.php');
 }
@@ -48,7 +49,8 @@ function login($nickname, $password)
 {
 	$userManager = new UserManager();
 	$userManager->login($nickname, $password);
-	header('Location: index.php?action=listPosts');
+
+	header('Location: index.php');
 }
 
 function gosignin()
@@ -67,7 +69,7 @@ function logout()
 {
 	$userManager = new UserManager();
 	$userManager->logout();
-	header('Location: index.php?action=listPosts');
+	listPosts();
 }
 
 function gopromote()
@@ -97,9 +99,9 @@ function write($postTitle, $post)
 
 function goeditComment ($commentId)
 {
-	//chercher commentaire
 	$commentManager = new CommentManager();
 	$comment = $commentManager->getComment($commentId);
+
 	require('view\moderateView.php');
 	header('view\moderateView.php&id=' . $commentId);
 }
@@ -107,23 +109,42 @@ function goeditComment ($commentId)
 function editComment($commentId, $newText)
 {
 	$adminManager = new AdminManager();
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
+
 	$adminManager->editComment($commentId, $newText);
-	listPosts(); //plutôt post avec le bon id
-	//header post avec id en url
+	$postId = $commentManager->getPostId($commentId);
+	$post = $postManager->getPost($postId['post_id']);
+	$comments = $commentManager->getComments($postId['post_id']);
+
+	require('view\postView.php');
 }
 
 function deleteComment($commentId)
 {
 	$adminManager = new AdminManager();
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
+	
+	$postId = $commentManager->getPostId($commentId);
+	$post = $postManager->getPost($postId['post_id']);
 	$adminManager->deleteComment($commentId);
-	listPosts(); //plutôt post avec le bon id
+	$comments = $commentManager->getComments($postId['post_id']);
+
+	require('view\postView.php');
 }
 
 function reportComment($commentId)
 {
 	$commentManager = new CommentManager();
+	$postManager = new PostManager();
+
 	$commentManager->reportComment($commentId);
-	listPosts(); //plutôt post avec le bon id
+	$postId = $commentManager->getPostId($commentId);
+	$post = $postManager->getPost($postId['post_id']);
+	$comments = $commentManager->getComments($postId['post_id']);
+
+	require('view\postView.php');
 }
 
 function deletePost($postId)
@@ -135,5 +156,22 @@ function deletePost($postId)
 
 function goeditPost($postId)
 {
-	header('Location: view\editPostView.php&id=' . $postId);
+	$postManager = new PostManager();
+	$post = $postManager->getPost($postId);
+	
+	require('view\editPostView.php');
+	header('view\editPostView.php&id=' . $postId);
+}
+
+function editPost($postId, $title, $text)
+{
+	$adminManager = new AdminManager();
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
+
+	$adminManager->editPost($postId, $title, $text);
+	$post = $postManager->getPost($postId);
+	$comments = $commentManager->getComments($postId);
+
+	require('view\postView.php');
 }

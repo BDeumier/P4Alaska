@@ -6,7 +6,7 @@ class PostManager extends Manager
 	public function getPosts()
 	{
 		$db = $this->dbConnect();
-    	$req = $db->query('SELECT * FROM posts ORDER BY id DESC LIMIT 0, 5');
+    	$req = $db->query('SELECT * FROM posts ORDER BY id DESC');
     	return $req;
 	}
 

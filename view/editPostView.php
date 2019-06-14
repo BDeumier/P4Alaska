@@ -1,14 +1,12 @@
-<?php $title = 'Le blog de l\'exilé';
-//session_start();
-?>
+<?php $title = 'Le blog de l\'exilé';?>
 
 <?php ob_start(); ?>
 <h1>Corriger un billet</h1>
 
 <!--formulaire pour corriger un billet -->
-<form action="index.php?action=write" method="post">
-	<label for="postTitle">Titre du billet : </label><textarea name="postTitle" id="postTitle"></textarea><br/>
-	<label for="post">Billet : </label><textarea name="post" id="postTextarea"></textarea><br/>
+<form action="index.php?action=editPost&amp;id=<?= $_GET['id'] ?>" method="post">
+	<label for="newTitle">Titre du billet : </label><input name="newTitle" id="newTitle" value="<?= $post['title'] ?>"></input><br/>
+	<label for="newText">Billet : </label><textarea name="newText" id="postTextarea"><?= $post['content'] ?></textarea><br/>
 	<input type="submit" value="Publier">
 </form>
 

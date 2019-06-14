@@ -28,11 +28,11 @@ class AdminManager extends Manager
 		$reqComment->execute(array($id));
 	}
 
-	public function editPost($id, $newText)
+	public function editPost($id, $newTitle, $newText)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('UPDATE posts SET content = ? WHERE id = ?');
-		$comment->execute(array($newText, $id));
+		$post = $db->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
+		$post->execute(array($newTitle, $newText, $id));
 	}
 
 	public function deleteComment($id)
