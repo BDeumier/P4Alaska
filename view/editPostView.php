@@ -1,4 +1,4 @@
-<?php $title = 'Le blog de l\'exilé';?>
+<?php $title = 'Billet simple pour l\'Alaska';?>
 
 <?php ob_start(); ?>
 <h1>Corriger un billet</h1>
@@ -12,4 +12,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('view\template.php'); ?>
+<?php require('template.php'); ?>

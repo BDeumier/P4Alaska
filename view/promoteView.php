@@ -1,6 +1,4 @@
-<?php $title = 'Le blog de l\'exilé';
-//session_start();
-?>
+<?php $title = 'Billet simple pour l\'Alaska';?>
 
 <?php ob_start(); ?>
 <p>Veuillez renseigner le pseudonyme de la personne à promouvoir :</p>
@@ -14,4 +12,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('view\template.php'); ?>
+<?php require('template.php'); ?>

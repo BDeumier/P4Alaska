@@ -1,8 +1,13 @@
 <?php
-require_once ('model\PostManager.php');
-require_once ('model\CommentManager.php');
-require_once ('model\UserManager.php');
-require_once ('model\AdminManager.php');
+use \BenjaminDeumier\BlogP4\Model\PostManager;
+use \BenjaminDeumier\BlogP4\Model\CommentManager;
+use \BenjaminDeumier\BlogP4\Model\UserManager;
+use \BenjaminDeumier\BlogP4\Model\AdminManager;
+
+require_once ('model/PostManager.php');
+require_once ('model/CommentManager.php');
+require_once ('model/UserManager.php');
+require_once ('model/AdminManager.php');
 
 function listPosts($page = 1)
 {
@@ -10,7 +15,7 @@ function listPosts($page = 1)
     $posts = $postManager->getPosts();
     $pageToDisplay = $page;
 
-    require('view\listPostsView.php');
+    require('view/listPostsView.php');
 }
 
 function post()
@@ -21,7 +26,7 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    require('view\postView.php');
+    require('view/postView.php');
 }
 
 function addComment($postId, $author, $comment)
@@ -42,7 +47,7 @@ function addComment($postId, $author, $comment)
 
 function gologin()
 {
-	require('view\loginView.php');
+	require('view/loginView.php');
 }
 
 function login($nickname, $password)
@@ -55,7 +60,7 @@ function login($nickname, $password)
 
 function gosignin()
 {
-	require('view\signinView.php');
+	require('view/signinView.php');
 }
 
 function signin($nickname, $password, $email)
@@ -74,7 +79,7 @@ function logout()
 
 function gopromote()
 {
-	require('view\promoteView.php');
+	require('view/promoteView.php');
 }
 
 
@@ -87,7 +92,7 @@ function promote($nickname)
 
 function gowrite()
 {
-	require('view\writeView.php');
+	require('view/writeView.php');
 }
 
 function write($postTitle, $post)
@@ -102,8 +107,8 @@ function goeditComment ($commentId)
 	$commentManager = new CommentManager();
 	$comment = $commentManager->getComment($commentId);
 
-	require('view\moderateView.php');
-	header('view\moderateView.php&id=' . $commentId);
+	require('view/moderateView.php');
+	header('view/moderateView.php&id=' . $commentId);
 }
 
 function editComment($commentId, $newText)
@@ -117,7 +122,7 @@ function editComment($commentId, $newText)
 	$post = $postManager->getPost($postId['post_id']);
 	$comments = $commentManager->getComments($postId['post_id']);
 
-	require('view\postView.php');
+	require('view/postView.php');
 }
 
 function deleteComment($commentId)
@@ -131,7 +136,7 @@ function deleteComment($commentId)
 	$adminManager->deleteComment($commentId);
 	$comments = $commentManager->getComments($postId['post_id']);
 
-	require('view\postView.php');
+	require('view/postView.php');
 }
 
 function reportComment($commentId)
@@ -144,7 +149,7 @@ function reportComment($commentId)
 	$post = $postManager->getPost($postId['post_id']);
 	$comments = $commentManager->getComments($postId['post_id']);
 
-	require('view\postView.php');
+	require('view/postView.php');
 }
 
 function deletePost($postId)
@@ -159,8 +164,8 @@ function goeditPost($postId)
 	$postManager = new PostManager();
 	$post = $postManager->getPost($postId);
 	
-	require('view\editPostView.php');
-	header('view\editPostView.php&id=' . $postId);
+	require('view/editPostView.php');
+	header('view/editPostView.php&id=' . $postId);
 }
 
 function editPost($postId, $title, $text)
@@ -173,5 +178,5 @@ function editPost($postId, $title, $text)
 	$post = $postManager->getPost($postId);
 	$comments = $commentManager->getComments($postId);
 
-	require('view\postView.php');
+	require('view/postView.php');
 }

@@ -1,5 +1,9 @@
 <?php
-require_once('model\Manager.php');
+namespace BenjaminDeumier\BlogP4\Model;
+use \BenjaminDeumier\BlogP4\Model\Manager;
+require_once('Manager.php');
+
+
 
 class UserManager extends Manager
 {
@@ -21,7 +25,7 @@ class UserManager extends Manager
 
     	else
     	{
-    		throw new Exception('Erreur : l\'identifiant ou le mot de passe est incorrect.');
+    		throw new \Exception('Erreur : l\'identifiant ou le mot de passe est incorrect.');
     	}
 	}
 
@@ -35,8 +39,8 @@ class UserManager extends Manager
 
 		if ($result['id'] >= 1)
 		{
-			throw new Exception('Erreur : le nickname est déja pris.');
-			exit();
+			throw new \Exception('Erreur : le nickname est déja pris.');
+			//exit();
 		}
 
 		$password_hashed = password_hash($password, PASSWORD_DEFAULT);
@@ -52,7 +56,6 @@ class UserManager extends Manager
 
 	public function logout()
 	{
-		//vérifier si la session contient bien quelque chose
 		session_destroy();		
 	}
 }

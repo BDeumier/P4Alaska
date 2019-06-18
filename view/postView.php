@@ -1,7 +1,4 @@
-
-<?php $title = 'Billet simple pour l\'Alaska';
-//session_start();
-?>
+<?php $title = 'Billet simple pour l\'Alaska';?>
 
 <?php ob_start(); ?>
 <div class="col-lg-12" id="news">
@@ -67,4 +64,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('view\template.php'); ?>
+<?php require('template.php'); ?>
