@@ -1,6 +1,7 @@
 <?php $title = 'Billet simple pour l\'Alaska';?>
 
 <?php ob_start(); ?>
+<!--affichage du billet -->
 <div class="col-lg-12" id="news">
     <h3><?= $post['title'] ?></h3>          
     <p>
@@ -9,6 +10,7 @@
     </p>
 </div>
 
+<!--actions d'administrateur -->
 <?php
     if (isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1)
     {
@@ -21,6 +23,7 @@
     }
 ?>
 
+<!--commentaires du billet -->
 <div class="col-lg-12" id="commentaires">
     <h3>Commentaires</h3>
     <?php
@@ -32,6 +35,8 @@
             <p><?= htmlspecialchars($comment['comment']) ?></p>
             <div class="commentActions">
                 <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>">Signaler</a>
+
+                <!--actions d'administrateur -->
                 <?php
                     if (isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1)
                     {
@@ -51,11 +56,12 @@
     if (isset($_SESSION['nickname']))
     {
     ?>
-            <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-                    <label for="comment">Commentaire</label><br />
-                    <textarea id="comment" name="comment"></textarea>
-                    <input type="submit" name="Envoyer" />
-            </form>
+        <!--formulaire pour écrire un commentaire -->
+        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+            <label for="comment">Commentaire</label><br />
+            <textarea id="comment" name="comment"></textarea>
+            <input type="submit" value="Envoyer" />
+        </form>
     <?php
     }
     ?>

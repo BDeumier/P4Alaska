@@ -1,6 +1,7 @@
 <?php $title = 'Billet simple pour l\'Alaska';?>
-
 <?php ob_start(); ?>
+
+<!--affichage des billets -->
 <div class="row justify-content-around" id="news">
     <div class="col-lg-7">
         <?php
@@ -26,6 +27,8 @@
         }        
         $posts->closeCursor();
         ?>
+
+        <!--pages pour naviguer vers les anciens billets -->
         <p>Pages : </p>
         <?php
         $pageNumber = round($postNumber / 5) + 1;
@@ -37,6 +40,8 @@
         }
         ?>
     </div>
+
+    <!--biographie de l'auteur -->
     <div class="col-lg-2">
         <div class="textbox" id="aside">
             <h3>A propos de l'auteur</h3>

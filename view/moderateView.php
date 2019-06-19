@@ -1,6 +1,6 @@
 <?php $title = 'Billet simple pour l\'Alaska';?>
-
 <?php ob_start(); ?>
+
 <h1>Modération</h1>
 <!--formulaire pour éditer le commentaire -->
 <form action="index.php?action=editComment&amp;id=<?= $_GET['id'] ?>" method="post">

@@ -1,8 +1,7 @@
 <?php $title = 'Billet simple pour l\'Alaska';?>
-
 <?php ob_start(); ?>
-<p>Veuillez rentrer votre identifiant et votre mot de passe :</p>
 
+<p>Veuillez rentrer votre identifiant et votre mot de passe :</p>
 <!--formulaire pour se connecter -->
 <form action="index.php?action=login" method="post">
 	<label for="nickname">Votre pseudo : </label><input type="text" name="nickname" id="nickname"><br/>

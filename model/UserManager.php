@@ -1,12 +1,14 @@
 <?php
+//namespaces
 namespace BenjaminDeumier\BlogP4\Model;
 use \BenjaminDeumier\BlogP4\Model\Manager;
 require_once('Manager.php');
 
-
+//fonctions d'utilisateur
 
 class UserManager extends Manager
 {
+	//se connecter
 	public function login($nickname, $password)
 	{
 		$db = $this->dbConnect();
@@ -29,6 +31,7 @@ class UserManager extends Manager
     	}
 	}
 
+	//s'inscrire
 	public function signin($nickname, $password, $email)
 	{
 		
@@ -40,7 +43,6 @@ class UserManager extends Manager
 		if ($result['id'] >= 1)
 		{
 			throw new \Exception('Erreur : le nickname est déja pris.');
-			//exit();
 		}
 
 		$password_hashed = password_hash($password, PASSWORD_DEFAULT);
@@ -51,9 +53,10 @@ class UserManager extends Manager
 		'password' => $password_hashed,
 		'email' => $email));
 
-		login($nickname, $password); //on renvoie true si ça marche et on redirige via l'index?
+		login($nickname, $password);
 	}
 
+	//se déconnecter
 	public function logout()
 	{
 		session_destroy();		

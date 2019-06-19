@@ -1,8 +1,7 @@
 <?php $title = 'Billet simple pour l\'Alaska';?>
-
 <?php ob_start(); ?>
-<h1>Corriger un billet</h1>
 
+<h1>Corriger un billet</h1>
 <!--formulaire pour corriger un billet -->
 <form action="index.php?action=editPost&amp;id=<?= $_GET['id'] ?>" method="post">
 	<label for="newTitle">Titre du billet : </label><input name="newTitle" id="newTitle" value="<?= $post['title'] ?>"></input><br/>

@@ -1,7 +1,9 @@
 <?php
+//on créé la session ici car c'est le point d'entrée du site
 session_start();
 require('controller/controller.php');
 
+//on récupère l'action demandée par l'utilisateur
 try
 {
     if (isset($_GET['action']))
@@ -256,12 +258,14 @@ try
             }
         }
     }
+    //si l'utilisateur n'a pas demandé d'action, on affiche la page d'accueil
     else
     {
         listPosts();
     }
 }
 
+//on affiche le message d'erreur si elle a été catch
 catch(Exception $e)
 {
     echo 'Erreur : ' . $e->getMessage();

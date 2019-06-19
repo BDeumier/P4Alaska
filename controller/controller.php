@@ -1,4 +1,5 @@
 <?php
+//namespaces
 use \BenjaminDeumier\BlogP4\Model\PostManager;
 use \BenjaminDeumier\BlogP4\Model\CommentManager;
 use \BenjaminDeumier\BlogP4\Model\UserManager;
@@ -9,6 +10,9 @@ require_once ('model/CommentManager.php');
 require_once ('model/UserManager.php');
 require_once ('model/AdminManager.php');
 
+//fonctions du controller
+
+//afficher les billets
 function listPosts($page = 1)
 {
 	$postManager = new PostManager();
@@ -18,6 +22,7 @@ function listPosts($page = 1)
     require('view/listPostsView.php');
 }
 
+//afficher un billet et ses commentaires
 function post()
 {
 	$postManager = new PostManager();
@@ -29,6 +34,7 @@ function post()
     require('view/postView.php');
 }
 
+//ajouter un commentaire
 function addComment($postId, $author, $comment)
 {
 	$commentManager = new CommentManager();
@@ -45,11 +51,13 @@ function addComment($postId, $author, $comment)
 	}
 }
 
+//afficher le formulaire de connexion
 function gologin()
 {
 	require('view/loginView.php');
 }
 
+//se connecter
 function login($nickname, $password)
 {
 	$userManager = new UserManager();
@@ -58,11 +66,13 @@ function login($nickname, $password)
 	header('Location: index.php');
 }
 
+//afficher le formulaire d'inscription
 function gosignin()
 {
 	require('view/signinView.php');
 }
 
+//se connecter
 function signin($nickname, $password, $email)
 {
 	$userManager = new UserManager();
@@ -70,6 +80,7 @@ function signin($nickname, $password, $email)
 	listPosts();
 }
 
+//se déconnecter
 function logout()
 {
 	$userManager = new UserManager();
@@ -77,12 +88,13 @@ function logout()
 	listPosts();
 }
 
+//afficher le formulaire de promotion
 function gopromote()
 {
 	require('view/promoteView.php');
 }
 
-
+//promouvoir un compte
 function promote($nickname)
 {
 	$adminManager = new AdminManager();
@@ -90,11 +102,13 @@ function promote($nickname)
 	listPosts();
 }
 
+//afficher la page d'écriture de billet
 function gowrite()
 {
 	require('view/writeView.php');
 }
 
+//écrire un billet
 function write($postTitle, $post)
 {
 	$adminManager = new AdminManager();
@@ -102,6 +116,7 @@ function write($postTitle, $post)
 	listPosts();
 }
 
+//afficher la page de modération
 function goeditComment ($commentId)
 {
 	$commentManager = new CommentManager();
@@ -111,6 +126,7 @@ function goeditComment ($commentId)
 	header('view/moderateView.php&id=' . $commentId);
 }
 
+//éditer un commentaire
 function editComment($commentId, $newText)
 {
 	$adminManager = new AdminManager();
@@ -125,6 +141,7 @@ function editComment($commentId, $newText)
 	require('view/postView.php');
 }
 
+//supprimer un commentaire
 function deleteComment($commentId)
 {
 	$adminManager = new AdminManager();
@@ -139,6 +156,7 @@ function deleteComment($commentId)
 	require('view/postView.php');
 }
 
+//signaler un commentaire
 function reportComment($commentId)
 {
 	$commentManager = new CommentManager();
@@ -152,6 +170,7 @@ function reportComment($commentId)
 	require('view/postView.php');
 }
 
+//supprimer un commentaire
 function deletePost($postId)
 {
 	$adminManager = new AdminManager();
@@ -159,6 +178,7 @@ function deletePost($postId)
 	listPosts();
 }
 
+//afficher la page de modification de billet
 function goeditPost($postId)
 {
 	$postManager = new PostManager();
@@ -168,6 +188,7 @@ function goeditPost($postId)
 	header('view/editPostView.php&id=' . $postId);
 }
 
+//modifier un billet
 function editPost($postId, $title, $text)
 {
 	$adminManager = new AdminManager();

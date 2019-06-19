@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="public/css/style.css" />
     </head>
     <body>
+    	<!--header -->
     	<div class="container-fluid">
     		<header class="row justify-content-around">
     			<div class="col-lg-7">
@@ -25,7 +26,8 @@
 							<h2>Un polar signé Jean Rochefort</h2>
 						</div>
 					</div>
-    			</div>	
+    			</div>
+    			<!--menu du header -->
     			<div class="col-lg-2">
     				<div id="idMenu">
 						<?php
@@ -47,6 +49,7 @@
 						if (isset($_SESSION['group_id']) AND $_SESSION['group_id'] == 1)
 						{
 						?>
+						<!--actions d'administrateur -->
 						<div class="admin">
 							<a href="index.php?action=gowrite">Ecrire un billet</a><br/>
 							<a href="index.php?action=gopromote">Promouvoir un compte en admin</a><br/>
@@ -58,14 +61,16 @@
 					</div>	
     			</div>	
 			</header>
+			<!--corps de la page -->
 			<div class="row">
 				<div class="col-lg-12">
 					<?= $content ?>
 				</div>
 			</div>
+			<!-- footer -->
 			<footer class="row">
 				<div class="col-lg-12">
-					<p>Mentions légales</p>
+					<a href="view/legalNoticeView.php">Mentions légales</a>
 				</div>	
 			</div>
 		</div>

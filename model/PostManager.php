@@ -1,12 +1,14 @@
 <?php
+//namespaces
 namespace BenjaminDeumier\BlogP4\Model;
 use \BenjaminDeumier\BlogP4\Model\Manager;
 require_once('Manager.php');
 
-
+//fonctions des billets
 
 class PostManager extends Manager
 {
+	//récupérer les billets
 	public function getPosts()
 	{
 		$db = $this->dbConnect();
@@ -14,6 +16,7 @@ class PostManager extends Manager
     	return $req;
 	}
 
+	//récupérer un billet
 	public function getPost($postId)
 	{
     	$db = $this->dbConnect();

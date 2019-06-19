@@ -1,7 +1,8 @@
 <?php
-
+//namespaces
 namespace BenjaminDeumier\BlogP4\Model;
 
+//fonctions
 class Manager
 {
 	protected function dbConnect()

@@ -1,12 +1,15 @@
 <?php
+
+//namespaces
 namespace BenjaminDeumier\BlogP4\Model;
 use \BenjaminDeumier\BlogP4\Model\Manager;
 require_once('Manager.php');
 
-
+//fonctions des commentaires
 
 class CommentManager extends Manager
 {
+    //récupérer les commentairezs d'un billet
 	public function getComments($postId)
 	{
     	$db = $this->dbConnect();
@@ -16,6 +19,7 @@ class CommentManager extends Manager
     	return $comments;
 	}
 
+    //récupérer un commentaire
     public function getComment($commentId)
     {
         $db = $this->dbConnect();
@@ -26,6 +30,7 @@ class CommentManager extends Manager
         return $comment;
     }
 
+    //ajouter un commentaire
 	public function postComment($postId, $author, $comment)
 	{
     	$db = $this->dbConnect();
@@ -35,6 +40,7 @@ class CommentManager extends Manager
     	return $affectedLines;
 	}
 
+    //signaler un commentaire
     public function reportComment($commentId)
     {
         $db = $this->dbConnect();
@@ -42,6 +48,7 @@ class CommentManager extends Manager
         $affectedLines = $req->execute(array($commentId));
     }
 
+    //récupérer l'id du billet d'un commentaire
     public function getPostId($commentId)
     {
         $db = $this->dbConnect();
