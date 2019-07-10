@@ -16,19 +16,14 @@
     	<!--header -->
     	<div class="container-fluid">
     		<header class="row justify-content-around">
-    			<div class="col-lg-7">
-    				<div id="titleBlock">
-    					<div id="logo">
-    						<a href="index.php"><img src="public/images/logotest1.png" alt="une vue sur un lac de l'Alaska" title="logo blog Alaska"/></a>
-    					</div>
-    					<div id="title">
-							<h1>Billet simple pour l'Alaska</h1>
-							<h2>Un polar signé Jean Rochefort</h2>
-						</div>
+    			<div class="col-lg-8">
+    				<div id="title">
+						<h1>Billet simple pour l'Alaska</h1>
+						<h2>Un polar signé Jean Rochefort</h2>
 					</div>
     			</div>
     			<!--menu du header -->
-    			<div class="col-lg-2">
+    			<div class="col-lg-3">
     				<div id="idMenu">
 						<?php
 						if (isset($_SESSION['id']) AND isset($_SESSION['nickname']))
@@ -59,10 +54,10 @@
 					?>
 						<a href="index.php">Retour à l'index</a><br/>
 					</div>	
-    			</div>	
+    			</div>
 			</header>
 			<!--corps de la page -->
-			<div class="row">
+			<div class="row" id="mainContent">
 				<div class="col-lg-12">
 					<?= $content ?>
 				</div>
@@ -70,7 +65,7 @@
 			<!-- footer -->
 			<footer class="row">
 				<div class="col-lg-12">
-					<a href="view/legalNoticeView.php">Mentions légales</a>
+					<a href="index.php?action=legalNotice">Mentions légales</a>
 				</div>	
 			</div>
 		</div>

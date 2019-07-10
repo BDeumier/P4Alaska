@@ -2,12 +2,15 @@
 
 <?php ob_start(); ?>
 <!--affichage du billet -->
-<div class="col-lg-12" id="news">
-    <h3><?= $post['title'] ?></h3>          
-    <p>
-        <?= $post['content'] ?><br/>
-        <strong>le <?= $post['post_date'] ?></strong>
-    </p>
+<div class="col-lg-8" id="news">
+    <div class="textbox">
+        <h3><?= $post['title'] ?></h3>          
+        <?= $post['content'] ?>
+        <div class="date">
+            <p>le <?= $post['post_date'] ?></p>
+        </div>
+
+    </div>  
 </div>
 
 <!--actions d'administrateur -->
@@ -24,7 +27,8 @@
 ?>
 
 <!--commentaires du billet -->
-<div class="col-lg-12" id="commentaires">
+<div class="col-lg-8" id="commentaires">
+    <div class="textbox">
     <h3>Commentaires</h3>
     <?php
     while ($comment = $comments->fetch())
@@ -52,7 +56,10 @@
         </div>
     <?php
     }
+    ?>
+    </div>
 
+    <?php
     if (isset($_SESSION['nickname']))
     {
     ?>

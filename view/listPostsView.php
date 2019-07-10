@@ -13,8 +13,9 @@
             {
         ?>
             <div class="textbox">
-                <h3><?= $data['title'] ?></h3>
+                
                 <div class ="postContent">
+                    <h3><?= $data['title'] ?></h3>
                     <?= $data['content'] ?>
                 </div>
                 <div class="date">
@@ -29,16 +30,18 @@
         ?>
 
         <!--pages pour naviguer vers les anciens billets -->
-        <p>Pages : </p>
-        <?php
-        $pageNumber = round($postNumber / 5) + 1;
-        for ($i = 1; $i <= $pageNumber; $i++)
-        {
-        ?>
+        <div class="textbox">
+            <p>Pages : 
+            <?php
+            $pageNumber = round($postNumber / 5) + 1;
+            for ($i = 1; $i <= $pageNumber; $i++)
+            {
+            ?>
             <a href="index.php?action=listPosts&amp;page=<?= $i ?>"><?= $i?></a>
-        <?php
-        }
-        ?>
+            <?php
+            }
+            ?></p> 
+        </div>  
     </div>
 
     <!--biographie de l'auteur -->

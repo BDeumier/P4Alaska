@@ -95,92 +95,140 @@ try
 
         elseif ($_GET['action'] == 'gopromote')
         {
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
+            {
                 gopromote();
+            }
+            else
+            {
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
+            }
         }
 
         elseif ($_GET['action'] == 'promote')
         {
-            if(isset($_POST['nickname']))
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                if ($_POST['nickname'] == $_POST['nickname2'])
+                if(isset($_POST['nickname']))
                 {
-                    promote($_POST['nickname']);                  
-                }
+                    if ($_POST['nickname'] == $_POST['nickname2'])
+                    {
+                        promote($_POST['nickname']);                  
+                    }
 
+                    else
+                    {
+                        throw new Exception("Les 2 champs ne sont pas identiques.");                 
+                    }
+                }
                 else
                 {
-                    throw new Exception("Les 2 champs ne sont pas identiques.");                 
+                    throw new Exception("Veuillez renseigner un pseudonyme.");           
                 }
             }
             else
             {
-                throw new Exception("Veuillez renseigner un pseudonyme.");
-                
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
         elseif ($_GET['action'] == 'gowrite')
         {
-            gowrite();
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
+            {
+                gowrite();
+            }
+            else
+            {
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
+            }
         }
 
         elseif ($_GET['action'] == 'write')
         {
-            if(isset($_POST['postTitle']) && isset($_POST['post']))
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                write($_POST['postTitle'], $_POST['post']);
-            }
+                if(isset($_POST['postTitle']) && isset($_POST['post']))
+                {
+                    write($_POST['postTitle'], $_POST['post']);
+                }
             
+                else
+                {
+                    throw new Exception('Erreur : le titre ou le contenu n\'est pas renseigné');
+                }
+            }
             else
             {
-                throw new Exception('Erreur : le titre ou le contenu n\'est pas renseigné');
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
         elseif ($_GET['action'] == 'goeditComment')
         {
-            if(isset($_GET['id']) && $_GET['id'] > 0)
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                goeditComment($_GET['id']);
-            }
+                if(isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    goeditComment($_GET['id']);
+                }
             
+                else
+                {
+                    throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+                }
+            }
             else
             {
-                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
+
         }
 
         elseif ($_GET['action'] == 'editComment')
         {
-            if(isset($_GET['id']) && $_GET['id'] > 0)
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                if (isset($_POST['newText']))
+                if(isset($_GET['id']) && $_GET['id'] > 0)
                 {
-                    editComment($_GET['id'], $_POST['newText']);
-                }
+                    if (isset($_POST['newText']))
+                    {
+                        editComment($_GET['id'], $_POST['newText']);
+                    }
 
+                    else
+                    {
+                        throw new Exception('Erreur : le texte est vide');
+                    }
+                }
                 else
                 {
-                    throw new Exception('Erreur : le texte est vide');
+                    throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
                 }
             }
-
             else
             {
-                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
         elseif ($_GET['action'] == 'deleteComment')
         {
-            if(isset($_GET['id']) && $_GET['id'] > 0)
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                deleteComment($_GET['id']);
-            }
+                if(isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    deleteComment($_GET['id']);
+                }
 
+                else
+                {
+                    throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+                }
+            }
             else
             {
-                throw new Exception('Erreur : aucun identifiant de commentaire envoyé');
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
@@ -199,49 +247,68 @@ try
 
         elseif ($_GET['action'] == 'deletePost')
         {
-            if(isset($_GET['id']) && $_GET['id'] > 0)
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                deletePost($_GET['id']);
-            }
+                if(isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    deletePost($_GET['id']);
+                }
 
+                else
+                {
+                    throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                }
+            }
             else
             {
-                throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
         elseif ($_GET['action'] == 'goeditPost')
         {
-            if(isset($_GET['id']) && $_GET['id'] > 0)
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                goeditPost($_GET['id']);
-            }
+                if(isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    goeditPost($_GET['id']);
+                }
 
+                else
+                {
+                    throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                }
+            }
             else
             {
-                throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
         elseif ($_GET['action'] == 'editPost')
         {
-            if(isset($_POST['newTitle']) && isset($_POST['newText']))
+            if(isset($_SESSION['nickname']) && $_SESSION['group_id'] == 1)
             {
-                if(isset($_GET['id']) && $_GET['id'] > 0)
+                if(isset($_POST['newTitle']) && isset($_POST['newText']))
                 {
-                    editPost($_GET['id'], $_POST['newTitle'], $_POST['newText']);
-                }
+                    if(isset($_GET['id']) && $_GET['id'] > 0)
+                    {
+                        editPost($_GET['id'], $_POST['newTitle'], $_POST['newText']);
+                    }
 
+                    else
+                    {
+                    throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                    }
+                }
                 else
                 {
-                throw new Exception('Erreur : aucun identifiant de billet envoyé');
+                    throw new Exception("Le titre ou le texte n'est pas renseigné");       
                 }
             }
-
             else
             {
-                throw new Exception("Le titre ou le texte n'est pas renseigné");
-                
+                throw new Exception('Erreur : vous n\'êtes pas autorisé à voir cette page');
             }
         }
 
@@ -256,6 +323,11 @@ try
             {
                 throw new Exception("La page demandée n'existe pas");       
             }
+        }
+
+        elseif ($_GET['action'] == 'legalNotice')
+        {
+            golegalNotice();
         }
     }
     //si l'utilisateur n'a pas demandé d'action, on affiche la page d'accueil

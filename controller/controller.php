@@ -201,3 +201,9 @@ function editPost($postId, $title, $text)
 
 	require('view/postView.php');
 }
+
+//afficher les mentions légales
+function golegalNotice()
+{
+	require ('view/legalNoticeView.php');
+}

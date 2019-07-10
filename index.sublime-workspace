@@ -1,0 +1,653 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"req",
+				"require"
+			],
+			[
+				"preg",
+				"preg_match"
+			],
+			[
+				"ne",
+				"newTitle"
+			],
+			[
+				"post",
+				"postId"
+			],
+			[
+				"new",
+				"newText"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"getC",
+				"getComments"
+			],
+			[
+				"comm",
+				"commentManager"
+			],
+			[
+				"com",
+				"commentId"
+			],
+			[
+				"p",
+				"page"
+			],
+			[
+				"pa",
+				"pageNumner"
+			],
+			[
+				"pos",
+				"postNumber"
+			],
+			[
+				"po",
+				"postNumber"
+			],
+			[
+				"mod",
+				"moderateView"
+			],
+			[
+				"max",
+				"max-height\tproperty"
+			],
+			[
+				"bor",
+				"border-radius\tproperty"
+			],
+			[
+				"mr",
+				"margin\tproperty"
+			],
+			[
+				"dire",
+				"flex-direction\tproperty"
+			],
+			[
+				"fe",
+				"fetch"
+			],
+			[
+				"ch",
+				"checkNickname"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"bl",
+				"black"
+			],
+			[
+				"box",
+				"box-shadow\tproperty"
+			],
+			[
+				"fo",
+				"font-style\tproperty"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"padd",
+				"padding\tproperty"
+			],
+			[
+				"bacl",
+				"background-color\tproperty"
+			],
+			[
+				"co",
+				"col-lg-12"
+			],
+			[
+				"lis",
+				"listPosts"
+			],
+			[
+				"dele",
+				"deletePost"
+			],
+			[
+				"pre",
+				"prepare"
+			],
+			[
+				"del",
+				"deletePost"
+			],
+			[
+				"pseudo",
+				"pseudonyme"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"POS",
+				"_POST"
+			],
+			[
+				"delete",
+				"deleteComment"
+			],
+			[
+				"te",
+				"textarea\tTag"
+			],
+			[
+				"grou",
+				"group_id"
+			],
+			[
+				"nicn",
+				"nickname2"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"use",
+				"userManager"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"leve",
+				"levelButtons"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"bord",
+				"border-radius\tproperty"
+			],
+			[
+				"backg",
+				"background-color\tproperty"
+			],
+			[
+				"kana",
+				"kanaManager"
+			],
+			[
+				"level",
+				"levelNumber"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"exec",
+				"execute"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"db",
+				"dbConnect"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"nom",
+				"nombre_pages"
+			],
+			[
+				"pas",
+				"password_hash"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"marg",
+				"margin\tproperty"
+			],
+			[
+				"commen",
+				"commentaires"
+			],
+			[
+				"id",
+				"idBillet"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"fle",
+				"flex-start\talign-items"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"date",
+				"datewritten"
+			],
+			[
+				"timer",
+				"timerID"
+			],
+			[
+				"tex",
+				"texteReservation"
+			],
+			[
+				"tim",
+				"timer"
+			],
+			[
+				"for",
+				"form\tTag"
+			],
+			[
+				"res",
+				"resteVelos"
+			],
+			[
+				"bi",
+				"available_bikes"
+			],
+			[
+				"st",
+				"station"
+			],
+			[
+				"ti",
+				"timerID"
+			],
+			[
+				"clear",
+				"clearInterval"
+			],
+			[
+				"se",
+				"setItem"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"imag",
+				"imagesSlider"
+			],
+			[
+				"aff",
+				"afficherTexte"
+			],
+			[
+				"dimi",
+				"diminuerTimer"
+			],
+			[
+				"affi",
+				"afficherTexte"
+			],
+			[
+				"n",
+				"nom"
+			],
+			[
+				"bout",
+				"boutonReserver"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"is",
+				"isSigned"
+			],
+			[
+				"sessi",
+				"sessionStorage"
+			],
+			[
+				"don",
+				"donneesLocales"
+			],
+			[
+				"las",
+				"lastY"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"flex",
+				"flex-direction\tproperty"
+			],
+			[
+				"det",
+				"detailsStation"
+			],
+			[
+				"ad",
+				"addEventListener"
+			],
+			[
+				"marqu",
+				"marqueurStation"
+			],
+			[
+				"align",
+				"align-items\tproperty"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/template.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/legalNoticeView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/controller/controller.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/index.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/public/css/style.css",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/signinView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/editPostView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/moderateView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/loginView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/listPostsView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/postView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/model/UserManager.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/model/PostManager.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/model/CommentManager.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/model/AdminManager.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/model/Manager.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/promoteView.php",
+		"/C/Users/Fuuldrin/Repositories/P4_blog/view/writeView.php",
+		"/C/Users/Fuuldrin/Desktop/17 juin/controller/controller.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/model/Manager.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/model/AdminManager.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/model/PostManager.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/model/CommentManager.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/controller/controller.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/index.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/public/css/style.css",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/editPostView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/listPostsView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/postView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/writeView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/moderateView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/template.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/model/UserManager.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/loginView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/promoteView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/signinView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/inscription.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/signinView",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/login_traitement.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/login.php",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/js/App.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/js/Ajax.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/js/Slider.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/css/style.css",
+		"/C/wamp64/www/Memory/view/template.php",
+		"/C/wamp64/www/Memory/public/css/style.css",
+		"/C/wamp64/www/Memory/model/Manager.php",
+		"/C/wamp64/www/Memory/model/LevelManager.php",
+		"/C/wamp64/www/Memory/model/LevelManager",
+		"/C/wamp64/www/Memory/view/frontend/template.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/model/model.php",
+		"/C/wamp64/www/Memory/model/Manager",
+		"/C/wamp64/www/Memory/model/model.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/old/post.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/post.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/view/indexView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/style.css",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/postView.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/posts.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/admin/.htaccess",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/displayHome.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/modele.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/admin/ajouter.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/admin/chemin.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/admin/.htpasswd",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/insc",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/footer.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/admin/.htacess",
+		"/C/wamp64/www/Cours OC PHP/Cours 3/billet.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 2/target.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 2/index.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 2/app.js",
+		"/C/wamp64/www/Cours OC PHP/Cours 2/style.css",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/index.html",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/js/Map.js",
+		"/C/wamp64/www/Cours OC PHP/Cours 2/style",
+		"/C/wamp64/www/Cours OC PHP/Cours 1/target.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 1/index.php",
+		"/C/wamp64/www/Cours OC PHP/Cours 1/secret.php",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3/js/Reservation.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/js/Slider.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/js/Reservation.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/js/Map.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/js/App.js",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/css/style.css",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/index.html",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/js/Ajax.js",
+		"/C/wamp64/www/Cours OC PHP/Cours 1/info.php",
+		"/C/Users/Fuuldrin/Documents/dev web/html/projet 3 - Trello/js/Reservation"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

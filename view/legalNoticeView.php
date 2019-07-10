@@ -207,7 +207,7 @@
 				<h2>10. Droit applicable et attribution de juridiction.</h2>  
                  <p>
                 Tout litige en relation avec l’utilisation du site&nbsp;<a href="http://p4alaska.benjamindeumier.com">http://p4alaska.benjamindeumier.com</a>&nbsp;est soumis au droit français. 
-                En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de </p>
+                En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents.</p>
 
 <?php $content = ob_get_clean(); ?>
 
